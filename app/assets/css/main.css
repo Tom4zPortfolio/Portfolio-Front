@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+:root {
+    /* Background */
+
+    --color-bg: #09090b;
+    --color-bg-secondary: #111114;
+
+    /* Surface */
+
+    --color-surface: rgba(255, 255, 255, 0.04);
+    --color-surface-hover: rgba(255, 255, 255, 0.08);
+
+    /* Borders */
+
+    --color-border: rgba(255, 255, 255, 0.08);
+
+    /* Text */
+
+    --color-text: #f8fafc;
+    --color-text-muted: #a1a1aa;
+
+    /* Brand */
+
+    --color-primary: #8b5cf6;
+    --color-secondary: #d946ef;
+
+    /* Gradient */
+
+    --gradient-brand: linear-gradient(
+            135deg,
+            #8b5cf6 0%,
+            #d946ef 100%
+    );
+
+    /* Blur */
+
+    --blur-glass: 20px;
+
+    /* Radius */
+
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+
+    /* Shadow */
+
+    --shadow-glass:
+            0 8px 32px rgba(0,0,0,.35);
+}
+
+
+.glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-gradient {
+    background: var(--gradient-brand);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.transition-default {
+    transition:
+            all .25s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
