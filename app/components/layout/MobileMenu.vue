@@ -1,14 +1,21 @@
 <script setup lang="ts">
+import { ref, watch, onUnmounted } from 'vue'
+
 const isOpen = ref(false)
 
 const props = defineProps<{
   links: { label: string; to: string }[]
 }>()
 
+// LOCK SCROLL
 watch(isOpen, (val) => {
   if (process.client) {
     document.body.style.overflow = val ? 'hidden' : ''
   }
+})
+
+onUnmounted(() => {
+  document.body.style.overflow = ''
 })
 </script>
 
@@ -16,40 +23,81 @@ watch(isOpen, (val) => {
   <div class="md:hidden">
 
     <!-- BURGER -->
-    <button class="glass rounded-full p-3" @click="isOpen = true">
+    <button
+        class="glass rounded-full p-3 transition hover:scale-105"
+        @click="isOpen = true"
+    >
       ☰
     </button>
 
     <!-- OVERLAY -->
-    <Transition name="fade">
+    <Transition name="overlay">
       <div
           v-if="isOpen"
-          class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col"
+          class="fixed inset-0 z-50 bg-black/60 backdrop-blur-md"
+          @click="isOpen = false"
+      />
+    </Transition>
+
+    <!-- DRAWER -->
+    <Transition name="drawer">
+      <div
+          v-if="isOpen"
+          class="
+          fixed
+          right-0
+          top-0
+          z-[60]
+          flex
+          h-screen
+          w-full
+          max-w-sm
+          flex-col
+          border-l
+          border-white/10
+          bg-zinc-950/90
+          backdrop-blur-xl
+        "
       >
 
-        <!-- TOP BAR -->
-        <div class="flex justify-between items-center px-6 py-5">
+        <!-- HEADER -->
+        <div class="flex items-center justify-between px-6 py-5">
           <span class="text-lg font-semibold">Tom</span>
 
           <button
-              class="glass rounded-full px-4 py-2"
+              class="glass rounded-full p-3 transition hover:scale-105"
               @click="isOpen = false"
           >
             ✕
           </button>
         </div>
 
-        <!-- NAV -->
-        <div class="flex flex-col items-center justify-center flex-1 gap-8">
+        <!-- LINKS -->
+        <nav class="flex flex-1 flex-col justify-center gap-8 px-8">
           <NuxtLink
-              v-for="link in links"
+              v-for="link in props.links"
               :key="link.label"
               :to="link.to"
               @click="isOpen = false"
-              class="text-3xl text-zinc-300 hover:text-white transition"
+              class="
+              text-3xl
+              font-medium
+              text-zinc-300
+              transition
+              duration-300
+              hover:translate-x-2
+              hover:text-white
+            "
           >
             {{ link.label }}
           </NuxtLink>
+        </nav>
+
+        <!-- FOOTER -->
+        <div class="border-t border-white/10 p-6">
+          <button class="glass w-full rounded-full py-3">
+            Login
+          </button>
         </div>
 
       </div>
@@ -57,3 +105,27 @@ watch(isOpen, (val) => {
 
   </div>
 </template>
+
+<style scoped>
+/* OVERLAY */
+.overlay-enter-active,
+.overlay-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.overlay-enter-from,
+.overlay-leave-to {
+  opacity: 0;
+}
+
+/* DRAWER */
+.drawer-enter-active,
+.drawer-leave-active {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.drawer-enter-from,
+.drawer-leave-to {
+  transform: translateX(100%);
+}
+</style>
