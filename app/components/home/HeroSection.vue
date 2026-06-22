@@ -3,52 +3,61 @@
 </script>
 
 <template>
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-    <!-- background glow -->
-    <div class="absolute inset-0">
-      <div class="absolute top-20 left-1/2 w-[500px] h-[500px] bg-violet-600/20 blur-[120px] rounded-full" />
-      <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-fuchsia-500/20 blur-[120px] rounded-full" />
-    </div>
-
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
     <!-- content -->
-    <div class="relative z-10 text-center max-w-3xl px-6">
+    <div class="relative z-10 text-center max-w-4xl px-6">
 
-      <div class="inline-flex px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-sm text-white/70">
-        Apprenti Développeur - BAC+4
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-morphism text-sm text-primary animate-bounce-slow">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        Disponible pour de nouveaux projets
       </div>
 
-      <h1 class="mt-6 text-5xl md:text-7xl font-bold text-white leading-tight">
-        Thomas
-        <span class="bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">
-          Gourlaouen
-        </span>
+      <h1 class="mt-8 text-6xl md:text-8xl font-black text-white leading-none tracking-tighter">
+        DESIGNER <br/>
+        <span class="text-gradient">& DÉVELOPPEUR</span>
       </h1>
 
-      <p class="mt-6 text-white/60 text-lg">
-        Développeur | Passionné du monde informatique et technologique
+      <p class="mt-8 text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        Je crée des expériences numériques immersives et performantes, 
+        alliant <span class="text-white font-medium">créativité</span> et <span class="text-white font-medium">technologie</span>.
       </p>
 
-      <div class="mt-10 flex gap-4 justify-center">
+      <div class="mt-12 flex flex-wrap gap-6 justify-center">
         <NuxtLink
             to="/portfolio"
-            class="px-6 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 transition text-white"
+            class="px-8 py-4 rounded-full bg-primary text-white font-bold hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all duration-300 transform hover:scale-105"
         >
-          Voir mes projets
+          Découvrir mes projets
         </NuxtLink>
 
         <NuxtLink
             to="/contact"
-            class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition text-white"
+            class="px-8 py-4 rounded-full glass-morphism border border-white/10 hover:bg-white/5 transition-all duration-300 font-medium"
         >
           Me contacter
         </NuxtLink>
       </div>
 
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-2">
+          <div class="w-1 h-2 bg-primary rounded-full"></div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
 
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 </style>

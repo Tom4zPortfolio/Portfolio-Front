@@ -49,20 +49,23 @@ onUnmounted(() => {
 
       <!-- LOGO -->
       <div class="justify-self-start">
-        <NuxtLink to="/" class="text-lg font-semibold tracking-tight">
-          "Tom
+        <NuxtLink to="/" class="text-xl font-bold tracking-tighter group">
+          <span class="text-gradient">TOM</span>
+          <span class="text-white opacity-50 group-hover:opacity-100 transition-opacity">.DEV</span>
         </NuxtLink>
       </div>
 
       <div class="hidden md:flex justify-self-center">
-        <nav class="glass flex items-center gap-1 rounded-full px-2 py-1">
+        <nav class="glass-morphism flex items-center gap-1 rounded-full px-2 py-1">
           <NuxtLink
               v-for="link in links"
               :key="link.label"
               :to="link.to"
-              class="rounded-full px-4 py-2 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
+              class="rounded-full px-4 py-2 text-sm text-zinc-300 transition-all duration-300 hover:text-white relative group"
+              active-class="bg-primary/20 text-white"
           >
             {{ link.label }}
+            <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-1/2"></span>
           </NuxtLink>
         </nav>
       </div>
