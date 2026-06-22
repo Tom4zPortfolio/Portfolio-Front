@@ -208,7 +208,12 @@ function submit() {
 
             <div class="flex items-center gap-3">
               <Icon name="fa6-brands:linkedin" />
-              <a target="_blank" href="https://www.linkedin.com/in/thomas-gourlaouen">Mon LinkedIn</a>
+              <a target="_blank" href="https://www.linkedin.com/in/thomas-gourlaouen">LinkedIn</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <Icon name="fa6-brands:discord" />
+              Tom4z
             </div>
 
           </div>

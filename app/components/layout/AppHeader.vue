@@ -3,11 +3,11 @@ import MobileMenu from "~/components/layout/MobileMenu.vue";
 
 const links = [
   {
-    label: 'Home',
+    label: 'Accueil',
     to: '/',
   },
   {
-    label: 'About',
+    label: 'A propos',
     to: '/about',
   },
   {
@@ -26,10 +26,16 @@ const links = [
 
 const scrolled = ref(false)
 
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 10
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', () => {
-    scrolled.value = window.scrollY > 10
-  })
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 
 </script>
