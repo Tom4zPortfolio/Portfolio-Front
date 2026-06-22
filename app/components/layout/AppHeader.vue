@@ -7,7 +7,7 @@ const links = [
     to: '/',
   },
   {
-    label: 'A propos',
+    label: 'À propos',
     to: '/about',
   },
   {
@@ -45,23 +45,24 @@ onUnmounted(() => {
       class="fixed top-0 left-0 right-0 z-50 px-6 py-5 transition-all duration-300"
       :class="scrolled ? 'backdrop-blur-xl bg-black/40' : ''"
   >
-    <div class="mx-auto grid max-w-7xl grid-cols-2 md:grid-cols-3 items-center">
+    <div class="mx-auto flex max-w-7xl items-center justify-between">
 
       <!-- LOGO -->
-      <div class="justify-self-start">
+      <div class="flex-shrink-0">
         <NuxtLink to="/" class="text-xl font-bold tracking-tighter group">
           <span class="text-gradient">TOM</span>
           <span class="text-white opacity-50 group-hover:opacity-100 transition-opacity">.DEV</span>
         </NuxtLink>
       </div>
 
-      <div class="hidden md:flex justify-self-center">
+      <!-- NAV (Desktop) -->
+      <div class="hidden md:flex items-center justify-center flex-1 mx-8">
         <nav class="glass-morphism flex items-center gap-1 rounded-full px-2 py-1">
           <NuxtLink
               v-for="link in links"
               :key="link.label"
               :to="link.to"
-              class="rounded-full px-4 py-2 text-sm text-zinc-300 transition-all duration-300 hover:text-white relative group"
+              class="rounded-full px-4 py-2 text-sm text-zinc-300 transition-all duration-300 hover:text-white relative group whitespace-nowrap"
               active-class="bg-primary/20 text-white"
           >
             {{ link.label }}
@@ -70,7 +71,8 @@ onUnmounted(() => {
         </nav>
       </div>
 
-      <div class="justify-self-end md:hidden flex justify-end">
+      <!-- MOBILE MENU -->
+      <div class="md:hidden flex items-center">
         <MobileMenu :links="links" />
       </div>
 
