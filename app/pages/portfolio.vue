@@ -46,28 +46,29 @@ const portfolios = [
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col justify-center py-20 overflow-hidden relative">
-    
-    <section class="container mx-auto px-6 text-center mb-16 relative z-10">
-      <h1 class="text-5xl md:text-7xl font-black mb-6">
-        MES <span class="text-gradient">PORTFOLIOS</span>
-      </h1>
-      <p class="text-white/60 text-lg max-w-2xl mx-auto">
-        Explorez mes différentes réalisations classées par thématique et niveau d'études.
-      </p>
-    </section>
+
+  <section class="container mx-auto px-6 mb-20 py-20 text-center">
+    <h1 class="text-5xl md:text-7xl font-black mb-6">
+      MES <span class="text-gradient">PORTFOLIOS</span>
+    </h1>
+    <p class="text-white/60 text-lg max-w-2xl mx-auto">
+      Explorez mes différentes réalisations classées par thématique et niveau d'études.
+    </p>
+  </section>
+
+  <div class="min-h-screen flex flex-col justify-center overflow-hidden relative">
 
     <!-- Cartes Centrales -->
     <section class="container mx-auto px-6 relative z-10">
       <div class="flex flex-wrap justify-center gap-8 lg:gap-12">
-        <div 
-          v-for="p in portfolios" 
+        <div
+          v-for="p in portfolios"
           :key="p.title"
           class="glass-card group relative w-full md:w-[350px] aspect-[4/5] rounded-[2rem] p-8 flex flex-col justify-between overflow-hidden cursor-pointer"
         >
           <!-- Background Gradient Glow -->
           <div class="absolute -inset-1 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-500 -z-10" :class="p.color"></div>
-          
+
           <div class="relative">
              <div class="w-16 h-16 rounded-2xl flex items-center justify-center bg-white/5 mb-6 group-hover:scale-110 transition-transform duration-500">
                <Icon :name="p.icon" size="40" class="text-white group-hover:text-primary transition-colors" />

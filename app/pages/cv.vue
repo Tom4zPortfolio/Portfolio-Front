@@ -58,7 +58,7 @@ const experience = [
 
 <template>
   <div class="pt-32 pb-20">
-    <section class="container mx-auto px-6 mb-20 text-center">
+    <section class="container mx-auto px-6 mb-20 py-20 text-center">
       <h1 class="text-5xl md:text-7xl font-black mb-6">
         MON <span class="text-gradient">PARCOURS</span>
       </h1>
