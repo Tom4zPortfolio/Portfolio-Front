@@ -21,8 +21,8 @@
         </div>
 
         <h1 class="text-6xl md:text-8xl font-black text-white leading-none tracking-tighter relative z-10">
-          DESIGNER <br/>
-          <span class="text-gradient">& DÉVELOPPEUR</span>
+          Thomas <br/>
+          <span class="text-gradient">GOURLAOUEN</span>
         </h1>
       </div>
 

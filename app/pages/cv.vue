@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TimelineSection from "~/components/cv/TimelineSection.vue";
+
 useHead({
   title: 'CV | Tom.dev',
   meta: [
@@ -8,48 +10,68 @@ useHead({
 
 const education = [
   {
-    title: "Master 1 - Expert en Informatique et Systèmes d'Information",
-    institution: "EPSI",
-    period: "2024 - 2025",
+    title: "Mastère - Bac+5 - Expert en Architecture & Développement Logicel",
+    institution: "ENI - Quimper",
+    period: "2026 - 2027",
     description: "Spécialisation en développement logiciel avancé, architecture système et gestion de projet agile.",
     skills: ["Architecture", "Management", "DevOps"]
   },
   {
-    title: "Bachelor - Concepteur Développeur d'Applications",
-    institution: "EPSI",
-    period: "2023 - 2024",
+    title: "Titre Pro - Bac+4 - Concepteur Développeur d'Applications",
+    institution: "ENI - Quimper",
+    period: "2024 - 2026",
     description: "Apprentissage approfondi des frameworks web, des bases de données et des méthodes de conception logicielle.",
-    skills: ["Fullstack", "Agile", "UML"]
+    skills: ["Fullstack", "Agile", "UML", "JAVA", "Gestion de Projet", "SQL"]
   },
   {
-    title: "BTS SIO - Option SLAM",
-    institution: "Lycée Saint-Louis",
-    period: "2021 - 2023",
+    title: "BTS SIO - Bac+2 - Option SLAM",
+    institution: "Pôle BTS Alternance - Brest",
+    period: "2022 - 2024",
     description: "Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métier.",
-    skills: ["C#", "SQL", "Web"]
+    skills: ["C#", "SQL", "Web", "PHP", "JAVA", "PYTHON", "CyberSécurité"]
+  },
+  {
+    title: "BAC PRO SN - Option RISC",
+    institution: "Lycée La croix rouge - Brest",
+    period: "2016 - 2019",
+    description: "Système Numérique, option Réseaux Informatique & Système Communiquant",
+    skills: ["Linux", "Windows Server", "Protocole WEB", "Hardware", "VM"]
   }
 ]
 
 const experience = [
   {
-    role: "Développeur Fullstack (Alternance)",
-    company: "Entreprise Tech",
-    period: "2023 - Présent",
+    role: "Développeur Web",
+    company: "Association BDE - Les Etages Unis - Brest",
+    period: "2023",
     tasks: [
-      "Développement de nouvelles fonctionnalités sur une application SaaS",
-      "Optimisation des performances front-end avec Vue.js",
-      "Mise en place de tests unitaires et d'intégration"
+      "Développement du site internet",
+      "Développement Backend - Gestion des évènements",
+      "Inscription - Génération pdf & QR code - Validation",
+      "Statistiques évènementiel"
     ],
-    tech: ["Vue 3", "Node.js", "Docker"]
+    tech: ["PHP", "Monolith", "Docker"]
   },
   {
-    role: "Stagiaire Développeur Web",
-    company: "Agence Digitale",
-    period: "2023 (4 mois)",
+    role: "Alternant Développeur",
+    company: "CHR GROUP - ePackPro - Brest",
+    period: "2022 - 2026",
     tasks: [
-      "Création de sites vitrines sous WordPress et React",
-      "Maintenance corrective et évolutive",
-      "Optimisation SEO"
+      "Développement & Intégration d'APIs",
+      "Développement ioT",
+      "Méthodes Agiles",
+    ],
+    tech: ["PHP - Symfony", "Nest JS", "Docker", "Clean Architecture", "ioT"]
+  },
+  {
+    role: "Stagiaire Technicien Informatique",
+    company: "Lycée de l'Elorn - Landerneau",
+    period: "2019 (1 mois)",
+    tasks: [
+      "Apprentissage du développement WEB",
+      "Maintenance informatique corrective et évolutive",
+      "Gestion du parc informatique",
+      "Assistance informatique"
     ],
     tech: ["React", "WordPress", "Tailwind"]
   }
@@ -79,22 +101,17 @@ const experience = [
         </h2>
 
         <div class="relative border-l-2 border-primary/20 ml-6 space-y-12">
-          <div v-for="(item, index) in education" :key="index" class="relative pl-10 group">
-            <!-- Dot -->
-            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-bg border-2 border-primary group-hover:bg-primary transition-colors duration-300"></div>
-            
-            <div class="glass-card p-6 rounded-2xl group-hover:border-primary/50 transition-all duration-500">
-              <span class="text-primary font-mono text-sm font-bold">{{ item.period }}</span>
-              <h3 class="text-xl font-bold mt-1">{{ item.title }}</h3>
-              <div class="text-white/50 text-sm mb-4">{{ item.institution }}</div>
-              <p class="text-white/70 text-sm leading-relaxed mb-4">{{ item.description }}</p>
-              <div class="flex flex-wrap gap-2">
-                <span v-for="skill in item.skills" :key="skill" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-wider">
-                  {{ skill }}
-                </span>
-              </div>
-            </div>
-          </div>
+          <TimelineSection
+              v-for="(item, index) in education"
+              :key="index"
+              variant="education"
+              icon="ph:graduation-cap-bold"
+              :title="item.title"
+              :subtitle="item.institution"
+              :period="item.period"
+              :description="item.description"
+              :badges="item.skills"
+          />
         </div>
       </div>
 
@@ -108,29 +125,17 @@ const experience = [
         </h2>
 
         <div class="relative border-l-2 border-secondary/20 ml-6 space-y-12">
-          <div v-for="(item, index) in experience" :key="index" class="relative pl-10 group">
-            <!-- Dot -->
-            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-bg border-2 border-secondary group-hover:bg-secondary transition-colors duration-300"></div>
-            
-            <div class="glass-card p-6 rounded-2xl group-hover:border-secondary/50 transition-all duration-500">
-              <span class="text-secondary font-mono text-sm font-bold">{{ item.period }}</span>
-              <h3 class="text-xl font-bold mt-1">{{ item.role }}</h3>
-              <div class="text-white/50 text-sm mb-4">{{ item.company }}</div>
-              
-              <ul class="space-y-2 mb-6">
-                <li v-for="task in item.tasks" :key="task" class="text-white/70 text-sm flex items-start gap-2">
-                  <Icon name="ph:caret-right-bold" class="text-secondary mt-1 flex-shrink-0" />
-                  {{ task }}
-                </li>
-              </ul>
-
-              <div class="flex flex-wrap gap-2">
-                <span v-for="tech in item.tech" :key="tech" class="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-[10px] uppercase tracking-wider">
-                  {{ tech }}
-                </span>
-              </div>
-            </div>
-          </div>
+          <TimelineSection
+              v-for="(item, index) in experience"
+              :key="index"
+              variant="experience"
+              icon="ph:briefcase-bold"
+              :title="item.role"
+              :subtitle="item.company"
+              :period="item.period"
+              :list="item.tasks"
+              :badges="item.tech"
+          />
         </div>
       </div>
 

@@ -93,6 +93,18 @@ onUnmounted(() => {
           </NuxtLink>
         </nav>
 
+        <div class="border-t border-white/10 p-6">
+          <div class="flex justify-center gap-4">
+            <a v-for="social in [
+            {icon: 'ph:github-logo-bold', href: '#'},
+            {icon: 'ph:linkedin-logo-bold', href: '#'},
+            {icon: 'ph:twitter-logo-bold', href: '#'}
+          ]" :key="social.icon" :href="social.href" class="glass-morphism w-12 h-12 flex items-center justify-center rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1">
+              <Icon :name="social.icon" size="24" />
+            </a>
+          </div>
+        </div>
+
         <!-- FOOTER -->
         <div class="border-t border-white/10 p-6">
           <button class="glass w-full rounded-full py-3">

@@ -11,43 +11,63 @@ onMounted(() => {
 
 const categories = [
   {
-    name: 'Frontend & Langages',
+    name: 'Langages',
     items: [
       { name: 'HTML5', icon: 'logos:html-5' },
       { name: 'CSS3', icon: 'logos:css-3' },
       { name: 'JavaScript', icon: 'logos:javascript' },
       { name: 'TypeScript', icon: 'logos:typescript-icon' },
-      { name: 'Vue.js', icon: 'logos:vue' },
-      { name: 'Nuxt', icon: 'logos:nuxt-icon' },
-      { name: 'React', icon: 'logos:react' },
       { name: 'PHP', icon: 'logos:php' },
       { name: 'Java', icon: 'logos:java' },
       { name: 'Python', icon: 'logos:python' },
+      { name: 'C', icon: 'logos:c' },
+      { name: 'C#', icon: 'logos:c-sharp' },
+      { name: 'Kotlin', icon: 'logos:kotlin-icon' },
+      { name: 'Dart', icon: 'logos:dart' },
+      { name: 'Arduino', icon: 'logos:arduino' },
     ]
   },
   {
-    name: 'Backend & Data',
+    name: 'FrameWork',
     items: [
-      { name: 'Node.js', icon: 'logos:nodejs-icon' },
       { name: 'Symfony', icon: 'logos:symfony' },
-      { name: 'Laravel', icon: 'logos:laravel' },
+      { name: 'Spring boot', icon: 'logos:spring-icon' },
+      { name: 'Nest JS', icon: 'logos:nestjs' },
+      { name: 'Nuxt', icon: 'logos:nuxt-icon' },
+      { name: 'Vue JS', icon: 'logos:vue' },
+      { name: 'React', icon: 'logos:react' },
+      { name: 'Angular', icon: 'logos:angular-icon' },
+      { name: 'Tailwind', icon: 'logos:tailwindcss-icon' },
+      { name: 'Bootstrap', icon: 'logos:bootstrap' },
+      { name: 'Flutter', icon: 'logos:flutter' },
+
+
+    ]
+  },
+  {
+    name: 'Data - Backend',
+    items: [
       { name: 'PostgreSQL', icon: 'logos:postgresql' },
       { name: 'MySQL', icon: 'logos:mysql' },
       { name: 'MongoDB', icon: 'logos:mongodb-icon' },
+      { name: 'OpenSearch', icon: 'logos:opensearch-icon' },
       { name: 'Redis', icon: 'logos:redis' },
+      { name: 'RabbitMQ', icon: 'logos:rabbitmq-icon' },
     ]
   },
   {
     name: 'Outils & Env',
     items: [
       { name: 'Docker', icon: 'logos:docker-icon' },
-      { name: 'Kubernetes', icon: 'logos:kubernetes' },
+      // { name: 'Kubernetes', icon: 'logos:kubernetes' },
       { name: 'Git', icon: 'logos:git-icon' },
       { name: 'Linux', icon: 'logos:linux-tux' },
       { name: 'Figma', icon: 'logos:figma' },
-      { name: 'Tailwind', icon: 'logos:tailwindcss-icon' },
+      { name: 'Jira', icon: 'logos:atlassian' },
+      { name: 'Notion', icon: 'logos:notion-icon' },
+      { name: 'Jetbrain IDEs', icon: 'logos:jetbrains-icon' },
     ]
-  }
+  },
 ]
 </script>
 

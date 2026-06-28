@@ -4,15 +4,15 @@
 - [ ] update tab title
 
 ## LAYOUT
-- [ ] fix navbar (to be centered)
-- [ ] update mobile navigation
+- [x] fix navbar (to be centered)
+- [x] update mobile navigation
 - [ ] review global responsive
 
 ## PAGE HOME
-- [ ] update hero section
+- [x] update hero section
 - [ ] fix wording
 - [ ] update about
-- [ ] fix stack technique
+- [x] fix stack technique
 - [ ] change CTA section
 - [ ] display last project uploaded
 
@@ -24,18 +24,18 @@
 - [ ] add reference book
 
 ## PAGE CV
-- [ ] update hero section
-- [ ] update formations
-- [ ] update pro experiences
+- [x] update hero section
+- [x] update formations
+- [x] update pro experiences
 - [ ] get formations via api
 - [ ] get pro experiences via api
 
 ## PAGE PORTFOLIO
-- [ ] update hero section
+- [x] update hero section
 - [ ] get portfolio via api
 
 ## PAGE CONTACT
-- [ ] update hero section
+- [x] update hero section
 - [ ] update ui
 - [ ] send email with sécurity
 

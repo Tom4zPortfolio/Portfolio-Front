@@ -47,16 +47,18 @@ const portfolios = [
 
 <template>
 
-  <section class="container mx-auto px-6 mb-20 py-20 text-center">
-    <h1 class="text-5xl md:text-7xl font-black mb-6">
-      MES <span class="text-gradient">PORTFOLIOS</span>
-    </h1>
-    <p class="text-white/60 text-lg max-w-2xl mx-auto">
-      Explorez mes différentes réalisations classées par thématique et niveau d'études.
-    </p>
-  </section>
-
   <div class="min-h-screen flex flex-col justify-center overflow-hidden relative">
+
+    <div class="pt-32 pb-20">
+      <section class="container mx-auto px-6 mb-20 py-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-black mb-6">
+          MES <span class="text-gradient">PORTFOLIOS</span>
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto">
+          Explorez mes différentes réalisations classées par thématique et niveau d'études.
+        </p>
+      </section>
+    </div>
 
     <!-- Cartes Centrales -->
     <section class="container mx-auto px-6 relative z-10">
