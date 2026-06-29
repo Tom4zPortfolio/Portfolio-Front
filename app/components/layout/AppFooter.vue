@@ -24,10 +24,10 @@ import SocialComponent from "~/components/ui/SocialComponent.vue";
         <nav class="flex flex-col gap-4 text-sm font-medium">
           <NuxtLink v-for="link in [
             {label: 'Accueil', to: '/'},
-            {label: 'À propos', to: '/about'},
-            {label: 'CV', to: '/cv'},
-            {label: 'Portfolios', to: '/portfolio'},
-            {label: 'Contact', to: '/contact'}
+            {label: 'À propos de moi', to: '/about'},
+            {label: 'Mon Parcours', to: '/parcours'},
+            {label: 'Mes portfolios', to: '/portfolio'},
+            {label: 'Me contacter', to: '/contact'}
           ]" :key="link.to" :to="link.to" class="text-white/40 transition hover:text-white flex items-center gap-2 group">
             <span class="w-0 h-px bg-primary transition-all duration-300 group-hover:w-4"></span>
             {{ link.label }}

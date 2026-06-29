@@ -17,11 +17,10 @@
 - [ ] display last project uploaded
 
 ## PAGE ABOUT
-- [ ] update about container
-- [ ] update soft skill container
-- [ ] update hard skill container
-- [ ] add veille techno container
-- [ ] add reference book
+- [x] update about container
+- [x] update soft skill container
+- [x] update hard skill container
+- [x] add veille techno container
 
 ## PAGE CV
 - [x] update hero section

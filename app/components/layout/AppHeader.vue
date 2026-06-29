@@ -12,8 +12,8 @@ const links = [
     to: '/about',
   },
   {
-    label: 'CV',
-    to: '/cv',
+    label: 'Parcours',
+    to: '/parcours',
   },
   {
     label: 'Portfolios',

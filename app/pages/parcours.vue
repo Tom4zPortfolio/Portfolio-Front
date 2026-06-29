@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TimelineSection from "~/components/cv/TimelineSection.vue";
+import TechStackSection from "~/components/home/TechStackSection.vue";
 
 useHead({
   title: 'CV | Tom.dev',
@@ -140,6 +141,8 @@ const experience = [
       </div>
 
     </div>
+    <TechStackSection />
+
   </div>
 </template>
 
