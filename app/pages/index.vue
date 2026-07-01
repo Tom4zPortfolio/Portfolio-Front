@@ -20,4 +20,3 @@ import TechStackSection from "~/components/home/TechStackSection.vue";
   </div>
 </template>
 
-<style></style>

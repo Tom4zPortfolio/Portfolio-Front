@@ -19,9 +19,12 @@ const projects = [
 </script>
 
 <template>
-  <section class="py-24 px-6">
+  <section class="py-32 px-6 relative">
+    <!-- Gradient transition top & bottom -->
+    <div class="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-bg via-bg/80 to-transparent z-10 opacity-80"></div>
+    <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-bg via-bg/80 to-transparent z-10 opacity-80"></div>
 
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto relative z-20">
 
       <div class="flex items-end justify-between">
         <div>
@@ -43,24 +46,28 @@ const projects = [
         <div
             v-for="project in projects"
             :key="project.title"
-            class="project-card"
+            class="group relative p-6 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
         >
+          <!-- Glow effect background -->
+          <div class="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-          <div class="h-40 rounded-xl bg-gradient-to-br from-violet-600/20 to-fuchsia-500/20 border border-white/10" />
+          <div class="h-48 rounded-2xl bg-gradient-to-br from-violet-600/10 to-fuchsia-500/10 border border-white/5 overflow-hidden relative">
+            <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
 
-          <h3 class="mt-4 text-white font-semibold">
+          <h3 class="mt-6 text-xl text-white font-bold group-hover:text-primary transition-colors">
             {{ project.title }}
           </h3>
 
-          <p class="text-white/50 text-sm mt-2">
+          <p class="text-white/50 text-sm mt-3 leading-relaxed">
             {{ project.description }}
           </p>
 
-          <div class="mt-4 flex gap-2 flex-wrap">
+          <div class="mt-6 flex gap-2 flex-wrap">
             <span
                 v-for="tag in project.tags"
                 :key="tag"
-                class="text-xs px-2 py-1 rounded-md bg-white/5 border border-white/10 text-white/60"
+                class="text-[10px] uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/40"
             >
               {{ tag }}
             </span>
@@ -76,13 +83,7 @@ const projects = [
 </template>
 
 <style scoped>
-@reference "tailwindcss";
-.project-card {
-  @apply p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md
-  hover:bg-white/10 hover:border-violet-500/30 transition;
-}
 </style>
 
 <style scoped>
-
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <section class="relative py-28 px-6 overflow-hidden">
+  <section class="relative py-32 px-6 overflow-hidden">
+    <!-- Gradient transition top -->
+    <div class="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-bg via-bg/80 to-transparent z-20 opacity-80"></div>
 
     <!-- background animated blobs -->
     <div class="absolute inset-0">

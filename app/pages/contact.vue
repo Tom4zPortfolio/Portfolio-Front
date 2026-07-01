@@ -59,18 +59,19 @@ function submit() {
 </script>
 
 <template>
-  <section class="mx-auto max-w-7xl px-6 pt-40">
+  <div class="mx-auto max-w-7xl px-6 pt-32">
 
     <!-- HEADER -->
-    <div class="mb-12">
-      <h1 class="text-5xl font-bold tracking-tight">
-        Contact
-      </h1>
+    <section class="container mx-auto px-6 mb-20 py-20 text-center">
+      <h1 class="text-5xl md:text-7xl font-black mb-6">
+        ME <span class="text-gradient">CONTACTER</span>
 
-      <p class="mt-4 text-zinc-400 max-w-xl">
+      </h1>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto">
         Une question, un projet ou une opportunité ? Envoyez-moi un message.
+
       </p>
-    </div>
+    </section>
 
     <div class="grid gap-12 md:grid-cols-2">
 
@@ -226,5 +227,5 @@ function submit() {
       </div>
 
     </div>
-  </section>
+  </div>
 </template>

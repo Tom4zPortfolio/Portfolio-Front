@@ -1,90 +1,54 @@
 <script setup lang="ts">
+import SocialComponent from "~/components/ui/SocialComponent.vue";
 </script>
 
 <template>
-  <footer class="mt-32 border-t border-white/10">
-
-    <div class="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-3">
-
+  <footer class="mt-32 border-t border-white/5 bg-bg-secondary/50 backdrop-blur-md">
+    <div class="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-3">
       <!-- DESCRIPTION -->
-      <div>
-        <h3 class="text-xl font-semibold tracking-tight">
-          Thomas.
-        </h3>
-
-        <p class="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">
-          Développeur full-stack spécialisé dans la conception d’applications modernes,
-          performantes et évolutives.
+      <div class="space-y-6">
+        <NuxtLink to="/" class="text-2xl font-black tracking-tighter">
+          <span class="text-gradient">TOM</span>.DEV
+        </NuxtLink>
+        <p class="max-w-sm text-sm leading-relaxed text-white/50">
+          Créateur d'expériences numériques d'exception. 
+          Passionné par l'innovation technique et le design minimaliste.
         </p>
       </div>
 
       <!-- NAVIGATION -->
       <div>
-        <h4 class="text-sm font-medium text-zinc-400">
+        <h4 class="text-xs uppercase tracking-[0.2em] font-bold text-primary mb-8">
           Navigation
         </h4>
-
-        <div class="mt-4 flex flex-col gap-3 text-sm">
-          <NuxtLink class="text-zinc-400 transition hover:text-white" to="/">
-            Accueil
+        <nav class="flex flex-col gap-4 text-sm font-medium">
+          <NuxtLink v-for="link in [
+            {label: 'Accueil', to: '/'},
+            {label: 'À propos de moi', to: '/about'},
+            {label: 'Mon Parcours', to: '/parcours'},
+            {label: 'Mes portfolios', to: '/portfolio'},
+            {label: 'Me contacter', to: '/contact'}
+          ]" :key="link.to" :to="link.to" class="text-white/40 transition hover:text-white flex items-center gap-2 group">
+            <span class="w-0 h-px bg-primary transition-all duration-300 group-hover:w-4"></span>
+            {{ link.label }}
           </NuxtLink>
-
-          <NuxtLink class="text-zinc-400 transition hover:text-white" to="/about">
-            À propos
-          </NuxtLink>
-
-          <NuxtLink class="text-zinc-400 transition hover:text-white" to="/cv">
-            CV
-          </NuxtLink>
-
-          <NuxtLink class="text-zinc-400 transition hover:text-white" to="/portfolio">
-            Portfolio
-          </NuxtLink>
-
-          <NuxtLink class="text-zinc-400 transition hover:text-white" to="/contact">
-            Contact
-          </NuxtLink>
-        </div>
+        </nav>
       </div>
 
-      <!-- RÉSEAUX (VERSION PREMIUM) -->
+      <!-- RÉSEAUX -->
       <div>
-        <h4 class="text-sm font-medium text-zinc-400">
-          Réseaux
+        <h4 class="text-xs uppercase tracking-[0.2em] font-bold text-secondary mb-8">
+          Connectons-nous
         </h4>
-
-        <div class="mt-4 flex gap-4">
-
-          <a
-              href="#"
-              class="glass flex h-11 w-11 items-center justify-center rounded-full transition hover:scale-105"
-          >
-            <Icon name="fa6-brands:github" class="text-lg" />
-          </a>
-
-          <a
-              href="#"
-              class="glass flex h-11 w-11 items-center justify-center rounded-full transition hover:scale-105"
-          >
-            <Icon name="fa6-brands:gitlab" class="text-lg" />
-          </a>
-
-          <a
-              href="#"
-              class="glass flex h-11 w-11 items-center justify-center rounded-full transition hover:scale-105"
-          >
-            <Icon name="fa6-brands:linkedin" class="text-lg" />
-          </a>
-
+        <div class="flex gap-4">
+          <SocialComponent />
         </div>
       </div>
-
     </div>
 
     <!-- COPYRIGHT -->
-    <div class="border-t border-white/10 py-8 text-center text-xs text-zinc-500">
-      © 2026 Gourlaouen Thomas — Tous droits réservés.
+    <div class="border-t border-white/5 py-10 text-center text-[10px] uppercase tracking-[0.3em] text-white/20">
+      &copy; {{ new Date().getFullYear() }} — TOM.DEV — DESIGNED WITH PASSION
     </div>
-
   </footer>
 </template>
