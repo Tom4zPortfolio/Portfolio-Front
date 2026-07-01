@@ -33,15 +33,7 @@ useHead({
 
 <template>
   <div class="pt-32 overflow-hidden">
-    <section class="container mx-auto px-6 mb-20 py-20 text-center">
-      <h1 class="text-5xl md:text-7xl font-black mb-6">
-        <span class="text-gradient">À PROPOS</span> DE MOI
 
-      </h1>
-      <p class="text-white/60 text-lg max-w-2xl mx-auto">
-        Découvrez mon univers, mes compétences techniques et mon approche du développement web.
-      </p>
-    </section>
     <AboutHeroSection />
     <SoftSkillsSection />
     <HobbySection />

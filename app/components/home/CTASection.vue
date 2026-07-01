@@ -35,7 +35,7 @@
         </NuxtLink>
 
         <NuxtLink
-            to="/portfolio"
+            to="/app/pages/portfolio"
             class="cta-button secondary"
         >
           Voir mes projets

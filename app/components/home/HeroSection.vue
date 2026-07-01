@@ -33,7 +33,7 @@
 
       <div class="mt-12 flex flex-wrap gap-6 justify-center">
         <NuxtLink
-            to="/portfolio"
+            to="/app/pages/portfolio"
             class="px-8 py-4 rounded-full bg-primary text-white font-bold hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all duration-300 transform hover:scale-105 animate-glow-pulse"
         >
           Découvrir mes projets

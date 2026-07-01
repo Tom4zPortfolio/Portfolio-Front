@@ -36,7 +36,7 @@ const projects = [
           </p>
         </div>
 
-        <NuxtLink to="/portfolio" class="text-violet-400 hover:text-violet-300 transition">
+        <NuxtLink to="/app/pages/portfolio" class="text-violet-400 hover:text-violet-300 transition">
           Voir tout →
         </NuxtLink>
       </div>

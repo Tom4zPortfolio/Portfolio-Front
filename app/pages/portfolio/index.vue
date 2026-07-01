@@ -1,48 +1,14 @@
 <script setup lang="ts">
+import {usePortfolios} from "~/composables/usePortfolios";
+
 useHead({
   title: 'Portfolios | Tom.dev',
   meta: [
     { name: 'description', content: 'Explorez mes différents portfolios : personnel, électronique et académique.' }
   ]
 })
+const { portfolios } = usePortfolios()
 
-const portfolios = [
-  {
-    title: "Portfolio Personnel",
-    description: "Mon univers créatif et mes projets personnels les plus ambitieux.",
-    link: "#",
-    icon: "ph:user-bold",
-    color: "from-violet-500 to-purple-600"
-  },
-  {
-    title: "Portfolio Électronique",
-    description: "Projets hardware, IoT et systèmes embarqués réalisés avec passion.",
-    link: "#",
-    icon: "ph:cpu-bold",
-    color: "from-blue-500 to-indigo-600"
-  },
-  {
-    title: "Portfolio BTS",
-    description: "Travaux réalisés durant mon BTS SIO (Solutions Logicielles).",
-    link: "#",
-    icon: "ph:code-bold",
-    color: "from-emerald-500 to-teal-600"
-  },
-  {
-    title: "Portfolio BAC+4",
-    description: "Projets de conception et développement d'applications avancées.",
-    link: "#",
-    icon: "ph:rocket-launch-bold",
-    color: "from-orange-500 to-red-600"
-  },
-  {
-    title: "Portfolio BAC+5",
-    description: "Expertise en systèmes d'information et management de projet.",
-    link: "#",
-    icon: "ph:strategy-bold",
-    color: "from-fuchsia-500 to-pink-600"
-  }
-]
 </script>
 
 <template>
@@ -79,7 +45,7 @@ const portfolios = [
              <p class="text-white/50 text-sm leading-relaxed">{{ p.description }}</p>
           </div>
 
-          <NuxtLink :to="p.link" class="inline-flex items-center gap-2 text-sm font-bold group/btn">
+          <NuxtLink :to="`/portfolio/${p.slug}`" class="inline-flex items-center gap-2 text-sm font-bold group/btn">
             VOIR LE PORTFOLIO
             <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover/btn:bg-primary transition-colors">
               <Icon name="ph:arrow-right-bold" size="16" />

@@ -26,7 +26,7 @@ import SocialComponent from "~/components/ui/SocialComponent.vue";
             {label: 'Accueil', to: '/'},
             {label: 'À propos de moi', to: '/about'},
             {label: 'Mon Parcours', to: '/parcours'},
-            {label: 'Mes portfolios', to: '/portfolio'},
+            {label: 'Mes portfolio', to: '/portfolios'},
             {label: 'Me contacter', to: '/contact'}
           ]" :key="link.to" :to="link.to" class="text-white/40 transition hover:text-white flex items-center gap-2 group">
             <span class="w-0 h-px bg-primary transition-all duration-300 group-hover:w-4"></span>
